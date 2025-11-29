@@ -2,8 +2,8 @@
 
 Automatizovaný systém pro hlášení ubytování cizinců do systému Ubyport (Policie ČR).
 Projekt není oficiálně spojen s PČR; ‘Ubyport’ je použit jen k popisu kompatibility.
-V projektu se často mluví o zaměstnancích jako o lidech pro ubytování (pojmenování vychází z původní potřeby autora tohoto projektu).
-V excelovávh tabulkách se nachází testovací fiktivní jména a data o fiktivníh lidech. 
+V projektu se často mluví o zaměstnancích jako o osobách pro ubytování (pojmenování vychází z původní potřeby autora tohoto projektu).
+V excelových tabulkách se nachází testovací fiktivní jména a data o fiktivníh lidech.
 
 **Status:** Funkční a otestováno na testovacím API
 
@@ -16,7 +16,7 @@ Aplikace automaticky:
 2. Ukládá je do SQLite databáze
 3. Detekuje nové zaměstnance (kteří ještě nejsou přihlášeni)
 4. Hlásí je prostřednictvím SOAP API s NTLM autentizací do systému Ubyport
-5. Stahuje PDF potvrzení
+5. Stahuje potvrzovací data - doručenku - potvrzení a z ní generuje soubor ve formátu PDF
 6. **Parsuje PDF a kontroluje skutečné přijetí/odmítnutí policií**
 7. Zaznamenává transakce pro audit
 8. **Vytváří 2 Excel exporty**: kompletní přehled + pouze potvrzení od policie
@@ -33,8 +33,8 @@ Aplikace automaticky:
 │   └── credentials.json        # Přihlašovací údaje (test + production)
 ├── src/
 │   ├── __init__.py
-│   ├── config.py               # Konfigurace cest (lokální, v .gitignore)
-│   ├── config.py.example       # Šablona konfigurace
+│   ├── config.py               # Konfigurace cest (lokální, v .gitignore, není ve verzi pro GitHub)
+│   ├── config.py.example       # Šablona konfigurace (slouží pro vytvoření ostrého config.py)
 │   ├── excel_reader.py         # Čtení a validace Excelu
 │   ├── database.py             # SQLite databáze + CRUD
 │   ├── soap_client.py          # SOAP klient s NTLM auth
@@ -62,7 +62,7 @@ Aplikace automaticky:
     └── potvrzeni_policie_*.xlsx      # Pouze potvrzení policií
 ```
 
-**Poznámka:** Data a exporty jsou uloženy mimo projekt, cesty se nastavují v `src/config.py`.
+**Poznámka:** Data a exporty se defaulně ukládají mimo adresář projektu samotného, cesty se nastavují v `src/config.py`.
 
 ---
 
@@ -122,7 +122,7 @@ cp src/config.py.example src/config.py
 
 ### 2. Credentials (`config/credentials.json`)
 
-Soubor už obsahuje **testovací credentials** (funkční) (do tohoto souboru README.md nevkládat citlivá data = přístupové údaje):
+Soubor obsahuje funkční **testovací credentials** (ve verzi zveřejněné na GitHub citlivé údaje nejsou):
 
 ```json
 {
@@ -535,7 +535,7 @@ pip install --upgrade zeep
 
 ## 📚 Dokumentace
 
-- **Technický popis API:** `zd/Technicky popis webove sluzby.pdf`
+- **Technický popis API:** `zd/Technicky-popis-webove-sluzby.pdf`
 - **Oficiální info:** https://policie.gov.cz/clanek/informace-pro-vyvojare.aspx
 
 ---
@@ -573,7 +573,7 @@ pip install --upgrade zeep
 ## 🔐 Bezpečnost
 
 ⚠️ **POZOR:**
-- `config/credentials.json` obsahuje **OSTRÉ přihlašovací údaje**
+- `config/credentials.json` obsahuje **OSTRÉ přihlašovací údaje** (ve veřejné verzi na GitHub tato citlivá data nejsou)
 - **NIKDY** necommituj tento soubor do Git!
 - Pro Git tracking použij template s fake údaji
 
@@ -601,7 +601,7 @@ pip install --upgrade zeep
 - 🌐 Website: [aidaro.ai](https://aidaro.ai)
 
 **Testovací účet:**
-- Organizace: XXXXX S.R.O.
+- Organizace: XXXXX s.r.o.
 - Testovací prostředí: xxxxx
 - IDUB: xxxxx
 
@@ -623,7 +623,7 @@ Tento projekt je dostupný v režimu **dual-licence**:
   Ceny: **11 000 Kč** jednorázově (v1.*) **nebo 3 300 Kč/rok**.  
   Kontakt: **ai@aidaro.ai** • +420 777 636 676 • `ORDERFORM.md`.
 
-_Disclaimer:_ Projekt není oficiálně spojen s Policií ČR. „Ubyport“ je název systému PČR a je použit pouze k popisu kompatibility.
+_Disclaimer_: Projekt není oficiálně spojen s Policií ČR. „Ubyport“ je název systému PČR a je použit pouze k popisu kompatibility.
 
 ---
 
