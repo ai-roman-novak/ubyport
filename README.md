@@ -542,7 +542,7 @@ pip install --upgrade zeep
 
 ## 📊 Testovací výsledky
 
-**Poslední test (24.10.2024 17:14):**
+**Poslední test (24.10.2025 17:14):**
 ```
 ✅ PDF parsování funguje správně
 ✅ Zaměstnanci s validními daty přijati policií → stav PRIHLASEN
@@ -628,6 +628,6 @@ _Disclaimer_: Projekt není oficiálně spojen s Policií ČR. „Ubyport“ je 
 ---
 
 **Verze:** 1.1.0
-**Poslední aktualizace:** 29.11.2024
+**Poslední aktualizace:** 29.11.2025
 **Status:** Testováno na testovacím API
 
