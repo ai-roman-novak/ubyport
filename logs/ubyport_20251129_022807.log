@@ -1,0 +1,122 @@
+2025-11-29 02:28:07,688 - __main__ - INFO - ================================================================================
+2025-11-29 02:28:07,688 - __main__ - INFO - UBYPORT AUTOMATIZACE - START
+2025-11-29 02:28:07,688 - __main__ - INFO - Prostředí: test
+2025-11-29 02:28:07,688 - __main__ - INFO - Režim: STANDARDNÍ
+2025-11-29 02:28:07,688 - __main__ - INFO - Potvrzení: Automatické (--yes)
+2025-11-29 02:28:07,688 - __main__ - INFO - Excel: <DATA_ROOT>/data/ubyport_people_to_send.xlsx
+2025-11-29 02:28:07,688 - __main__ - INFO - Databáze: <DATA_ROOT>/data/ubyport.db
+2025-11-29 02:28:07,688 - __main__ - INFO - ================================================================================
+2025-11-29 02:28:07,688 - __main__ - INFO - 
+[1/6] Načítání dat z Excelu...
+2025-11-29 02:28:07,688 - excel_reader - INFO - ExcelReader inicializován pro: <DATA_ROOT>/data/ubyport_people_to_send.xlsx
+2025-11-29 02:28:08,125 - excel_reader - INFO - Načteno 7 řádků z Excelu
+2025-11-29 02:28:08,125 - excel_reader - INFO - Normalizovány názvy sloupců: ['Příjmení', 'Jméno', 'Datum narození', 'Číslo pasu', 'Státní občanství', 'Datum příjezdu', 'Datum odjezdu', 'Číslo víza', 'Bydliště v domovské zemi', 'Účel pobytu', 'Poznámka']
+2025-11-29 02:28:08,125 - excel_reader - INFO - Automatický režim: zpracování všech 7 řádků z Excelu
+2025-11-29 02:28:08,125 - excel_reader - INFO - Auto-konverze datetime na DDMMRRRR: 1958-02-27 00:00:00 → 27021958
+2025-11-29 02:28:08,126 - excel_reader - INFO - Auto-konverze datetime na DDMMRRRR: 1978-04-28 00:00:00 → 28041978
+2025-11-29 02:28:08,126 - excel_reader - INFO - Auto-konverze datetime na DDMMRRRR: 2003-07-03 00:00:00 → 03072003
+2025-11-29 02:28:08,126 - excel_reader - INFO - Auto-konverze datetime na DDMMRRRR: 2001-11-01 00:00:00 → 01112001
+2025-11-29 02:28:08,126 - excel_reader - INFO - Auto-konverze datetime na DDMMRRRR: 1998-06-05 00:00:00 → 05061998
+2025-11-29 02:28:08,126 - excel_reader - INFO - Auto-konverze datetime na DDMMRRRR: 1990-06-06 00:00:00 → 06061990
+2025-11-29 02:28:08,126 - excel_reader - INFO - Auto-konverze datetime na DDMMRRRR: 2001-08-12 00:00:00 → 12082001
+2025-11-29 02:28:08,126 - excel_reader - INFO - Validováno: 7 zaměstnanců, 0 chyb
+2025-11-29 02:28:08,126 - __main__ - INFO -   ✓ Načteno 7 validních zaměstnanců z Excelu
+2025-11-29 02:28:08,126 - __main__ - INFO - 
+[2/6] Připojení k databázi...
+2025-11-29 02:28:08,126 - database - INFO - Databázové schéma vytvořeno/ověřeno
+2025-11-29 02:28:08,127 - database - INFO - Databáze inicializována: <DATA_ROOT>/data/ubyport.db
+2025-11-29 02:28:08,127 - __main__ - INFO -   ✓ Databáze připravena
+2025-11-29 02:28:08,127 - __main__ - INFO - 
+[3/6] Detekce nových zaměstnanců...
+2025-11-29 02:28:08,127 - database - INFO - Kontrola 7 zaměstnanců z Excelu...
+2025-11-29 02:28:08,127 - database - INFO -   • Vozembouch Bonifác - NOVÝ zaměstnanec (bude přihlášen)
+2025-11-29 02:28:08,127 - database - INFO -   • Veliký Sarkofág - NOVÝ zaměstnanec (bude přihlášen)
+2025-11-29 02:28:08,127 - database - INFO -   • Jasný Tomáš - NOVÝ zaměstnanec (bude přihlášen)
+2025-11-29 02:28:08,127 - database - INFO -   • Jorka Borka - NOVÝ zaměstnanec (bude přihlášen)
+2025-11-29 02:28:08,127 - database - INFO -   • Farka Sarka - NOVÝ zaměstnanec (bude přihlášen)
+2025-11-29 02:28:08,127 - database - INFO -   • Polski Maluch - NOVÝ zaměstnanec (bude přihlášen)
+2025-11-29 02:28:08,127 - database - INFO -   • Kyrylov Ihor - NOVÝ zaměstnanec (bude přihlášen)
+2025-11-29 02:28:08,127 - database - INFO - Nalezeno: 7 nových zaměstnanců
+2025-11-29 02:28:08,127 - __main__ - INFO -   - Nových k přihlášení: 7
+2025-11-29 02:28:08,127 - __main__ - INFO - 
+Vytvářím backup databáze...
+2025-11-29 02:28:08,127 - __main__ - INFO - Backup databáze vytvořen: <DATA_ROOT>/data/backup/ubyport_backup_20251129_022808.db
+2025-11-29 02:28:08,127 - __main__ - INFO -   ✓ Backup vytvořen: <DATA_ROOT>/data/backup/ubyport_backup_20251129_022808.db
+2025-11-29 02:28:08,127 - __main__ - INFO - 
+[4/6] Připojení k Ubyport API...
+2025-11-29 02:28:08,669 - soap_client - INFO - UbyportClient inicializován pro prostředí: test
+2025-11-29 02:28:09,442 - soap_client - INFO - Test dostupnosti: True
+2025-11-29 02:28:09,443 - __main__ - INFO -   ✓ API je dostupné
+2025-11-29 02:28:09,443 - __main__ - INFO - 
+[5/6] Přihlašování nových zaměstnanců do Ubyportu...
+2025-11-29 02:28:09,443 - __main__ - INFO - 
+============================================================
+2025-11-29 02:28:09,443 - __main__ - INFO - PŘIHLAŠOVÁNÍ NOVÝCH ZAMĚSTNANCŮ: 7
+2025-11-29 02:28:09,443 - __main__ - INFO - ============================================================
+2025-11-29 02:28:09,443 - __main__ - INFO - 
+Dávka 1: 7 osob
+2025-11-29 02:28:09,456 - soap_client - INFO - Maximální délka seznamu: 32
+2025-11-29 02:28:09,456 - soap_client - INFO - Odesílám 7 osob do Ubyportu...
+2025-11-29 02:28:11,760 - soap_client - INFO - PDF uloženo: <DATA_ROOT>/data/potvrzeni/potvrzeni_20251129_022811.pdf
+2025-11-29 02:28:11,779 - soap_client - INFO - PDF parsováno: 6 přijato, 1 nepřijato
+2025-11-29 02:28:11,779 - soap_client - WARNING -   Nepřijato: Farka Sarka - Záznamshostemjeduplicitní abyljižzpracován vjednézpředchozích dávek
+2025-11-29 02:28:11,779 - soap_client - INFO - Zápis ubytovaných proběhl úspěšně
+2025-11-29 02:28:11,782 - database - INFO - Vložen zaměstnanec: Vozembouch Bonifác (ID: 1)
+2025-11-29 02:28:11,784 - database - INFO - Stav zaměstnance 1 změněn na: PRIHLASEN
+2025-11-29 02:28:11,784 - __main__ - INFO -   ✓ Vozembouch Bonifác - PŘIHLÁŠEN
+2025-11-29 02:28:11,785 - database - INFO - Zaznamenána transakce: PRIHLASENI pro zaměstnance 1
+2025-11-29 02:28:11,787 - database - INFO - Vložen zaměstnanec: Veliký Sarkofág (ID: 2)
+2025-11-29 02:28:11,789 - database - INFO - Stav zaměstnance 2 změněn na: PRIHLASEN
+2025-11-29 02:28:11,789 - __main__ - INFO -   ✓ Veliký Sarkofág - PŘIHLÁŠEN
+2025-11-29 02:28:11,790 - database - INFO - Zaznamenána transakce: PRIHLASENI pro zaměstnance 2
+2025-11-29 02:28:11,792 - database - INFO - Vložen zaměstnanec: Jasný Tomáš (ID: 3)
+2025-11-29 02:28:11,794 - database - INFO - Stav zaměstnance 3 změněn na: PRIHLASEN
+2025-11-29 02:28:11,794 - __main__ - INFO -   ✓ Jasný Tomáš - PŘIHLÁŠEN
+2025-11-29 02:28:11,796 - database - INFO - Zaznamenána transakce: PRIHLASENI pro zaměstnance 3
+2025-11-29 02:28:11,798 - database - INFO - Vložen zaměstnanec: Jorka Borka (ID: 4)
+2025-11-29 02:28:11,799 - database - INFO - Stav zaměstnance 4 změněn na: PRIHLASEN
+2025-11-29 02:28:11,799 - __main__ - INFO -   ✓ Jorka Borka - PŘIHLÁŠEN
+2025-11-29 02:28:11,801 - database - INFO - Zaznamenána transakce: PRIHLASENI pro zaměstnance 4
+2025-11-29 02:28:11,802 - database - INFO - Vložen zaměstnanec: Farka Sarka (ID: 5)
+2025-11-29 02:28:11,802 - __main__ - ERROR -   ✗ Farka Sarka - ERR_DUPLICITA: již existuje v systému policie
+2025-11-29 02:28:11,804 - database - INFO - Stav zaměstnance 5 změněn na: ERR_DUPLICITA
+2025-11-29 02:28:11,805 - database - INFO - Zaznamenána transakce: PRIHLASENI pro zaměstnance 5
+2025-11-29 02:28:11,807 - database - INFO - Vložen zaměstnanec: Polski Maluch (ID: 6)
+2025-11-29 02:28:11,808 - database - INFO - Stav zaměstnance 6 změněn na: PRIHLASEN
+2025-11-29 02:28:11,808 - __main__ - INFO -   ✓ Polski Maluch - PŘIHLÁŠEN
+2025-11-29 02:28:11,810 - database - INFO - Zaznamenána transakce: PRIHLASENI pro zaměstnance 6
+2025-11-29 02:28:11,811 - database - INFO - Vložen zaměstnanec: Kyrylov Ihor (ID: 7)
+2025-11-29 02:28:11,813 - database - INFO - Stav zaměstnance 7 změněn na: PRIHLASEN
+2025-11-29 02:28:11,813 - __main__ - INFO -   ✓ Kyrylov Ihor - PŘIHLÁŠEN
+2025-11-29 02:28:11,814 - database - INFO - Zaznamenána transakce: PRIHLASENI pro zaměstnance 7
+2025-11-29 02:28:11,814 - database - INFO - Databázové spojení uzavřeno
+2025-11-29 02:28:11,814 - __main__ - INFO - 
+================================================================================
+2025-11-29 02:28:11,814 - __main__ - INFO - ZÁVĚREČNÝ REPORT
+2025-11-29 02:28:11,814 - __main__ - INFO - ================================================================================
+2025-11-29 02:28:11,815 - __main__ - INFO - Nově přihlášeno:         6
+2025-11-29 02:28:11,815 - __main__ - INFO - Chyby při odesílání:     1
+2025-11-29 02:28:11,815 - __main__ - INFO - ================================================================================
+2025-11-29 02:28:11,815 - __main__ - INFO - Celkem zpracováno:       7
+2025-11-29 02:28:11,815 - __main__ - INFO - ================================================================================
+2025-11-29 02:28:11,815 - __main__ - INFO - Log uložen do: logs/ubyport_20251129_022807.log
+2025-11-29 02:28:11,815 - __main__ - INFO - ================================================================================
+
+2025-11-29 02:28:11,815 - __main__ - INFO - 
+[6/6] Export výsledků do Excelu...
+2025-11-29 02:28:11,815 - database - INFO - Databázové schéma vytvořeno/ověřeno
+2025-11-29 02:28:11,815 - database - INFO - Databáze inicializována: <DATA_ROOT>/data/ubyport.db
+2025-11-29 02:28:11,831 - export_excel - INFO - Kompletní export vytvořen: <DATA_ROOT>/export/export_kompletni_20251129_022811.xlsx
+2025-11-29 02:28:11,832 - export_excel - INFO -   - People: 7 záznamů
+2025-11-29 02:28:11,832 - export_excel - INFO -   - Transakce: 7 záznamů
+2025-11-29 02:28:11,832 - database - INFO - Databázové spojení uzavřeno
+2025-11-29 02:28:11,832 - __main__ - INFO -   ✓ Kompletní export: <DATA_ROOT>/export/export_kompletni_20251129_022811.xlsx
+2025-11-29 02:28:11,832 - __main__ - INFO -     - Zaměstnanců: 7
+2025-11-29 02:28:11,832 - __main__ - INFO -     - Transakcí: 7
+2025-11-29 02:28:11,832 - database - INFO - Databázové schéma vytvořeno/ověřeno
+2025-11-29 02:28:11,832 - database - INFO - Databáze inicializována: <DATA_ROOT>/data/ubyport.db
+2025-11-29 02:28:11,838 - export_excel - INFO - Export potvrzení policie vytvořen: <DATA_ROOT>/export/potvrzeni_policie_20251129_022811.xlsx
+2025-11-29 02:28:11,838 - export_excel - INFO -   - Počet potvrzených zaměstnanců: 6
+2025-11-29 02:28:11,838 - database - INFO - Databázové spojení uzavřeno
+2025-11-29 02:28:11,838 - __main__ - INFO -   ✓ Export potvrzení policie: <DATA_ROOT>/export/potvrzeni_policie_20251129_022811.xlsx
+2025-11-29 02:28:11,838 - __main__ - INFO -     - Potvrzených u policie: 6

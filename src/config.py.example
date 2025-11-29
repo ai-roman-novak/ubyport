@@ -1,0 +1,50 @@
+# SPDX-FileCopyrightText: 2025 Aidaro s.r.o.
+# SPDX-License-Identifier: AGPL-3.0-or-later OR LicenseRef-Aidaro-Commercial-1.0
+
+"""
+Konfigurace cest pro projekt Ubyport.
+Tento soubor je ŠABLONA - zkopíruj ho jako config.py a uprav cesty podle svého prostředí.
+
+POUŽITÍ:
+1. Zkopíruj tento soubor: cp config.py.example config.py
+2. Uprav BASE_DATA_DIR podle svého systému
+3. config.py je v .gitignore, takže zůstane lokální
+"""
+from pathlib import Path
+
+# Základní adresář projektu (kde je src/, venv/, atd.)
+PROJECT_ROOT = Path(__file__).parent.parent
+
+# Základní adresář s daty (synchronizovaný s pcloud)
+# UPRAV TUTO CESTU podle svého prostředí!
+BASE_DATA_DIR = Path("/cesta/k/tvojim/datum/ubyport")
+
+# Složky dat
+DATA_DIR = BASE_DATA_DIR / "data"
+EXPORT_DIR = BASE_DATA_DIR / "export"
+
+# Specifické soubory a složky
+DB_PATH = DATA_DIR / "ubyport.db"
+EXCEL_PATH = DATA_DIR / "ubyport_people_to_send.xlsx"
+PDF_DIR = DATA_DIR / "potvrzeni"
+BACKUP_DIR = DATA_DIR / "backup"
+
+# Složka logů (lokálně v projektu, ne v pcloud)
+LOGS_DIR = PROJECT_ROOT / "logs"
+
+# Složka config (lokálně v projektu)
+CONFIG_DIR = PROJECT_ROOT / "config"
+
+
+def ensure_directories():
+    """Vytvoří všechny potřebné složky, pokud neexistují."""
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
+    EXPORT_DIR.mkdir(parents=True, exist_ok=True)
+    PDF_DIR.mkdir(parents=True, exist_ok=True)
+    LOGS_DIR.mkdir(parents=True, exist_ok=True)
+    CONFIG_DIR.mkdir(parents=True, exist_ok=True)
+    BACKUP_DIR.mkdir(parents=True, exist_ok=True)
+
+
+# Automaticky vytvoř složky při importu
+ensure_directories()

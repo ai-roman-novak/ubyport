@@ -1,0 +1,42 @@
+2025-11-29 02:27:33,887 - __main__ - INFO - ================================================================================
+2025-11-29 02:27:33,888 - __main__ - INFO - UBYPORT AUTOMATIZACE - START
+2025-11-29 02:27:33,888 - __main__ - INFO - Prostředí: test
+2025-11-29 02:27:33,888 - __main__ - INFO - Režim: DRY-RUN (simulace)
+2025-11-29 02:27:33,888 - __main__ - INFO - Potvrzení: Interaktivní
+2025-11-29 02:27:33,888 - __main__ - INFO - Excel: <DATA_ROOT>/data/ubyport_people_to_send.xlsx
+2025-11-29 02:27:33,888 - __main__ - INFO - Databáze: <DATA_ROOT>/data/ubyport.db
+2025-11-29 02:27:33,888 - __main__ - INFO - ================================================================================
+2025-11-29 02:27:33,888 - __main__ - INFO - 
+[1/6] Načítání dat z Excelu...
+2025-11-29 02:27:33,888 - excel_reader - INFO - ExcelReader inicializován pro: <DATA_ROOT>/data/ubyport_people_to_send.xlsx
+2025-11-29 02:27:34,432 - excel_reader - INFO - Načteno 7 řádků z Excelu
+2025-11-29 02:27:34,433 - excel_reader - INFO - Normalizovány názvy sloupců: ['Příjmení', 'Jméno', 'Datum narození', 'Číslo pasu', 'Státní občanství', 'Datum příjezdu', 'Datum odjezdu', 'Číslo víza', 'Bydliště v domovské zemi', 'Účel pobytu', 'Poznámka']
+2025-11-29 02:27:34,433 - excel_reader - INFO - Automatický režim: zpracování všech 7 řádků z Excelu
+2025-11-29 02:27:34,433 - excel_reader - INFO - Auto-konverze datetime na DDMMRRRR: 1958-02-27 00:00:00 → 27021958
+2025-11-29 02:27:34,433 - excel_reader - INFO - Auto-konverze datetime na DDMMRRRR: 1978-04-28 00:00:00 → 28041978
+2025-11-29 02:27:34,433 - excel_reader - INFO - Auto-konverze datetime na DDMMRRRR: 2003-07-03 00:00:00 → 03072003
+2025-11-29 02:27:34,433 - excel_reader - INFO - Auto-konverze datetime na DDMMRRRR: 2001-11-01 00:00:00 → 01112001
+2025-11-29 02:27:34,434 - excel_reader - INFO - Auto-konverze datetime na DDMMRRRR: 1998-06-05 00:00:00 → 05061998
+2025-11-29 02:27:34,434 - excel_reader - INFO - Auto-konverze datetime na DDMMRRRR: 1990-06-06 00:00:00 → 06061990
+2025-11-29 02:27:34,434 - excel_reader - INFO - Auto-konverze datetime na DDMMRRRR: 2001-08-12 00:00:00 → 12082001
+2025-11-29 02:27:34,434 - excel_reader - INFO - Validováno: 7 zaměstnanců, 0 chyb
+2025-11-29 02:27:34,434 - __main__ - INFO -   ✓ Načteno 7 validních zaměstnanců z Excelu
+2025-11-29 02:27:34,434 - __main__ - INFO - 
+[2/6] Připojení k databázi...
+2025-11-29 02:27:34,438 - database - INFO - Databázové schéma vytvořeno/ověřeno
+2025-11-29 02:27:34,438 - database - INFO - Databáze inicializována: <DATA_ROOT>/data/ubyport.db
+2025-11-29 02:27:34,438 - __main__ - INFO -   ✓ Databáze připravena
+2025-11-29 02:27:34,438 - __main__ - INFO - 
+[3/6] Detekce nových zaměstnanců...
+2025-11-29 02:27:34,438 - database - INFO - Kontrola 7 zaměstnanců z Excelu...
+2025-11-29 02:27:34,438 - database - INFO -   • Vozembouch Bonifác - NOVÝ zaměstnanec (bude přihlášen)
+2025-11-29 02:27:34,438 - database - INFO -   • Veliký Sarkofág - NOVÝ zaměstnanec (bude přihlášen)
+2025-11-29 02:27:34,438 - database - INFO -   • Jasný Tomáš - NOVÝ zaměstnanec (bude přihlášen)
+2025-11-29 02:27:34,438 - database - INFO -   • Jorka Borka - NOVÝ zaměstnanec (bude přihlášen)
+2025-11-29 02:27:34,438 - database - INFO -   • Farka Sarka - NOVÝ zaměstnanec (bude přihlášen)
+2025-11-29 02:27:34,438 - database - INFO -   • Polski Maluch - NOVÝ zaměstnanec (bude přihlášen)
+2025-11-29 02:27:34,438 - database - INFO -   • Kyrylov Ihor - NOVÝ zaměstnanec (bude přihlášen)
+2025-11-29 02:27:34,438 - database - INFO - Nalezeno: 7 nových zaměstnanců
+2025-11-29 02:27:34,438 - __main__ - INFO -   - Nových k přihlášení: 7
+2025-11-29 02:27:34,438 - __main__ - INFO - DRY-RUN MÓD - ukončeno bez odeslání
+2025-11-29 02:27:34,438 - database - INFO - Databázové spojení uzavřeno
