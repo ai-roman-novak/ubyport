@@ -10,6 +10,7 @@ ENV/
 
 # Konfigurace (lokální)
 src/config.py
+config/credentials_zaloha_ubyport_github.json
 
 # IDE
 .vscode/
